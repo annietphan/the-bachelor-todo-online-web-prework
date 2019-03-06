@@ -13,8 +13,16 @@ end
 def get_contestant_name(data, occupation)
   # code here
   data.each do |season, all_contestant_info|
-    all_contestant_info.each do |all_contestant_info, indiv_contestant|
-      if indiv_contestant[:occupation] == occupation
+    all_contestant_info.each do |people|
+      people.each do |key, value|
+        if people[:occupation] == occupation
+          return people["name"]
+        end
+      end
+    end
+  end
+end
+      if people[:occupation] == occupation
         return indiv_contestant[:name]
       end
     end
