@@ -1,5 +1,6 @@
 def get_first_name_of_season_winner(data, season)
-  data[season].each do|people|
+  # code here
+  data[season].each do |people|
     people.each do |key, value|
       if value == "Winner"
         full_name = people["name"]
@@ -9,15 +10,15 @@ def get_first_name_of_season_winner(data, season)
   end
 end
 
-  # code here
-
-
-
-
-
-
 def get_contestant_name(data, occupation)
   # code here
+  data.each do |season, all_contestant_info|
+    all_contestant_info.each do |all_contestant_info, indiv_contestant|
+      if indiv_contestant[:occupation] == occupation
+        return indiv_contestant[:name]
+      end
+    end
+  end
 end
 
 def count_contestants_by_hometown(data, hometown)
