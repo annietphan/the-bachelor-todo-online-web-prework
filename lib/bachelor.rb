@@ -3,9 +3,10 @@ def get_first_name_of_season_winner(data, season)
     if season_number.to_s == season
       array_of_contestants.each do |contestant_hash|
         if contestant_hash[:status] == "Winner"
-          return contestant_hash[:name]
+          return contestant_hash[:name].split(" ").first
         end
       end
+      return "No Winner"
     end
   end
 end
